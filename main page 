@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.category {
+    margin: 30px auto;
+    width: 90%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.book-slider {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+.book-slider a {
+    flex: 0 0 auto;
+    margin: 0 10px;
+}
+
+.book-slider img {
+    width: 150px;
+    height: 220px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.book-slider img:hover {
+    transform: scale(1.1) rotate(2deg);
+    animation: bounce 0.3s ease-in-out;
+}
+
+/* Fade-in effect for categories */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in effect for books */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Bounce effect on hover */
+@keyframes bounce {
+    0% { transform: scale(1.1) translateY(0); }
+    50% { transform: scale(1.15) translateY(-5px); }
+    100% { transform: scale(1.1) translateY(0); }
+}
+
